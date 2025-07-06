@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lamec.ma - Création d'entreprise au Maroc</title>
+    <meta name="description" content="Créez votre entreprise au Maroc en quelques clics avec Lamec.ma. Services juridiques professionnels, création SARL, SA, domiciliation et comptabilité.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.js"></script>
+    <style>
+        .accordion-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+        }
+        .accordion-content.open {
+            max-height: 200px;
+        }
+        .mobile-menu {
+            display: none;
+        }
+        .mobile-menu.open {
+            display: block;
+        }
+        @media (max-width: 768px) {
+            .desktop-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="min-h-screen bg-white">
+    <!-- Header -->
+    <header class="bg-white shadow-sm border-b sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center space-x-2">
+                    <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                        <span class="text-white font-bold text-sm">L</span>
+                    </div>
+                    <span class="text-xl font-bold text-gray-900">Lamec.ma</span>
+                </div>
+
+                <nav class="desktop-nav hidden md:flex items-center space-x-8">
+                    <a href="#services" class="text-gray-600 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">À propos</a>
+                    <a href="#process" class="text-gray-600 hover:text-blue-600 transition-colors">Processus</a>
+                    <a href="#faq" class="text-gray-600 hover:text-blue-600 transition-colors">FAQ</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+                </nav>
+
+                <div class="flex items-center space-x-4">
+                    <button onclick="openWhatsApp('Bonjour, je souhaite créer ma société au Maroc.')" class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors">
+                        Commencer maintenant
+                    </button>
+                    <button onclick="toggleMobileMenu()" class="md:hidden p-2">
+                        <i data-lucide="menu" class="h-5 w-5"></i>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Menu -->
+            <div id="mobile-menu" class="mobile-menu md:hidden mt-4 pb-4">
+                <nav class="flex flex-col space-y-4">
+                    <a href="#services" class="text-gray-600 hover:text-blue-600 transition-colors">Services</a>
+                    <a href="#about" class="text-gray-600 hover:text-blue-600 transition-colors">À propos</a>
+                    <a href="#process" class="text-gray-600 hover:text-blue-600 transition-colors">Processus</a>
+                    <a href="#faq" class="text-gray-600 hover:text-blue-600 transition-colors">FAQ</a>
+                    <a href="#contact" class="text-gray-600 hover:text-blue-600 transition-colors">Contact</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="bg-gradient-to-br from-blue-50 to-indigo-100 py-20">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="space-y-4">
+                        <span class="bg-blue-100 text-blue-800 px-3 py-1 rounded-full text-sm font-medium">
+                            Services juridiques professionnels
+                        </span>
+                        <h1 class="text-4xl lg:text-6xl font-bold text-gray-900 leading-tight">
+                            LANCEZ VOTRE SOCIÉTÉ
+                            <span class="block text-blue-600">MAINTENANT</span>
+                        </h1>
+                        <p class="text-xl text-gray-600 leading-relaxed">
+                            Créez votre entreprise au Maroc en quelques clics avec notre équipe d'experts juridiques. Simplifiez vos démarches administratives avec Lamec.ma.
+                        </p>
+                    </div>
+
+                    <div class="flex flex-col sm:flex-row gap-4">
+                        <button onclick="openWhatsApp('Bonjour, je souhaite créer ma société au Maroc. Pouvez-vous m\'aider ?')" class="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 rounded-md transition-colors flex items-center justify-center">
+                            Créer votre société maintenant
+                            <i data-lucide="arrow-right" class="ml-2 h-5 w-5"></i>
+                        </button>
+                        <button onclick="openWhatsApp('Bonjour, je souhaite découvrir vos services juridiques.')" class="border border-gray-300 text-gray-700 hover:bg-gray-50 text-lg px-8 py-4 rounded-md transition-colors">
+                            Découvrir nos services
+                        </button>
+                    </div>
+
+                    <div class="flex items-center space-x-8 pt-4">
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-gray-900">500+</div>
+                            <div class="text-sm text-gray-600">Sociétés créées</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-gray-900">72h</div>
+                            <div class="text-sm text-gray-600">Délai moyen</div>
+                        </div>
+                        <div class="text-center">
+                            <div class="text-2xl font-bold text-gray-900">100%</div>
+                            <div class="text-sm text-gray-600">Satisfaction</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="relative">
+                    <img src="images/office-interior.png" alt="Bureau professionnel Lamec.ma - Espace de travail moderne" class="w-full h-auto rounded-2xl shadow-2xl">
+                    <div class="absolute -bottom-6 -left-6 bg-white p-6 rounded-xl shadow-lg">
+                        <div class="flex items-center space-x-3">
+                            <i data-lucide="check-circle" class="h-8 w-8 text-green-500"></i>
+                            <div>
+                                <div class="font-semibold">Processus simplifié</div>
+                                <div class="text-sm text-gray-600">100% en ligne</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-6">
+                    <img src="images/office-exterior.png" alt="Bureaux Lamec.ma - Bâtiment moderne au Maroc" class="w-full h-auto rounded-xl shadow-lg">
+                </div>
+
+                <div class="space-y-6">
+                    <div>
+                        <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                            Créez votre société en ligne au Maroc !
+                        </h2>
+                        <p class="text-lg text-gray-600 leading-relaxed">
+                            Chez Lamec.ma, nous vous accompagnons à simplifier la création juridique de votre entreprise au Maroc. Notre équipe d'experts vous guide à travers toutes les étapes administratives, vous aidant à lancer votre activité en toute sérénité.
+                        </p>
+                    </div>
+
+                    <div class="space-y-4">
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-green-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Création de SARL</h3>
+                                <p class="text-gray-600">Constitution complète de votre société à responsabilité limitée</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-green-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Création de SA</h3>
+                                <p class="text-gray-600">Mise en place de votre société anonyme avec tous les documents requis</p>
+                            </div>
+                        </div>
+                        <div class="flex items-start space-x-3">
+                            <i data-lucide="check-circle" class="h-6 w-6 text-green-500 mt-1"></i>
+                            <div>
+                                <h3 class="font-semibold text-gray-900">Services complémentaires</h3>
+                                <p class="text-gray-600">Compte bancaire, tenue de comptabilité, conseil juridique, social et fiscal</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button onclick="openWhatsApp('Bonjour, je souhaite voir vos services détaillés pour la création d\'entreprise.')" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-3 rounded-md transition-colors">
+                        Voir nos services détaillés
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Choose Us Section -->
+    <section id="about" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Pourquoi choisir <span class="text-blue-600">Lamec.ma</span> ?
+                </h2>
+            </div>
+
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <div class="space-y-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-l-blue-600">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-blue-100 p-3 rounded-lg">
+                                <i data-lucide="clock" class="h-6 w-6 text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Rapidité</h3>
+                                <p class="text-gray-600">Création de votre société en 72h seulement grâce à notre platform optimisé et notre expertise.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-l-green-600">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-green-100 p-3 rounded-lg">
+                                <i data-lucide="shield" class="h-6 w-6 text-green-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Sécurité</h3>
+                                <p class="text-gray-600">Tous vos documents sont sécurisés et conformes à la réglementation marocaine en vigueur.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="bg-white p-6 rounded-lg shadow-sm border-l-4 border-l-purple-600">
+                        <div class="flex items-start space-x-4">
+                            <div class="bg-purple-100 p-3 rounded-lg">
+                                <i data-lucide="users" class="h-6 w-6 text-purple-600"></i>
+                            </div>
+                            <div>
+                                <h3 class="text-xl font-semibold text-gray-900 mb-2">Accompagnement</h3>
+                                <p class="text-gray-600">Notre équipe d'experts vous accompagne à chaque étape de la création de votre entreprise.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-gradient-to-br from-blue-600 to-indigo-700 rounded-2xl p-8 text-white">
+                    <div class="space-y-6">
+                        <h3 class="text-2xl font-bold">Simplicité</h3>
+                        <p class="text-blue-100 leading-relaxed">
+                            Grâce à notre plateforme intuitive, Lamec vous offre une expérience simplifiée pour la création de votre société. Fini les démarches administratives complexes !
+                        </p>
+                        <div class="space-y-4">
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="h-5 w-5 text-green-400"></i>
+                                <span>Interface simple et intuitive</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="h-5 w-5 text-green-400"></i>
+                                <span>Suivi en temps réel</span>
+                            </div>
+                            <div class="flex items-center space-x-3">
+                                <i data-lucide="check-circle" class="h-5 w-5 text-green-400"></i>
+                                <span>Support client dédié</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Section -->
+    <section id="process" class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">
+                    Explorez nos services de création d'entreprise
+                </h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Chez Lamec.ma, nous vous offrons une gamme complète de services pour créer votre entreprise au Maroc. Découvrez notre processus simple et efficace en 3 étapes.
+                </p>
+            </div>
+
+            <div class="grid md:grid-cols-3 gap-8 mb-16">
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-lg transition-shadow">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-blue-600">01</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Création d'une SARL</h3>
+                    <p class="text-gray-600">Constitution complète de votre société à responsabilité limitée avec tous les documents légaux requis.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-lg transition-shadow">
+                    <div class="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-green-600">02</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Création d'une SA/SAS</h3>
+                    <p class="text-gray-600">Mise en place de votre société anonyme ou par actions simplifiée selon vos besoins spécifiques.</p>
+                </div>
+
+                <div class="bg-white p-8 rounded-lg shadow-sm text-center hover:shadow-lg transition-shadow">
+                    <div class="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-6">
+                        <span class="text-2xl font-bold text-purple-600">03</span>
+                    </div>
+                    <h3 class="text-xl font-semibold text-gray-900 mb-4">Création d'entreprise au Maroc</h3>
+                    <p class="text-gray-600">Accompagnement complet pour toutes les formes juridiques d'entreprises au Maroc.</p>
+                </div>
+            </div>
+
+            <div class="text-center">
+                <button onclick="openWhatsApp('Bonjour, je souhaite voir le détail de votre processus de création d\'entreprise.')" class="bg-blue-600 hover:bg-blue-700 text-white text-lg px-8 py-4 rounded-md transition-colors">
+                    Voir le détail
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Réponses à vos questions</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">
+                    Explorez comment Lamec.ma peut vous aider à créer et à gérer votre entreprise plus facilement et efficacement. Nous répondons aux questions les plus fréquentes.
+                </p>
+            </div>
+
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="bg-white rounded-lg">
+                    <button onclick="toggleAccordion('faq1')" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                        <span class="font-medium">Comment puis-je payer pour les services comptables ?</span>
+                        <i data-lucide="chevron-down" class="h-5 w-5 transform transition-transform" id="faq1-icon"></i>
+                    </button>
+                    <div id="faq1" class="accordion-content px-6">
+                        <div class="pb-4 text-gray-600">
+                            Nous acceptons plusieurs modes de paiement : virement bancaire, carte bancaire, et paiement en ligne sécurisé. Vous pouvez également opter pour un paiement échelonné selon vos besoins.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg">
+                    <button onclick="toggleAccordion('faq2')" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                        <span class="font-medium">Puis-je utiliser Lamec.ma sans aucune connaissance du droit ou de l'entrepreneuriat ?</span>
+                        <i data-lucide="chevron-down" class="h-5 w-5 transform transition-transform" id="faq2-icon"></i>
+                    </button>
+                    <div id="faq2" class="accordion-content px-6">
+                        <div class="pb-4 text-gray-600">
+                            Absolument ! Notre plateforme est conçue pour être accessible à tous, même sans connaissances juridiques préalables. Notre équipe d'experts vous guide à chaque étape et s'occupe de toutes les complexités administratives.
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-lg">
+                    <button onclick="toggleAccordion('faq3')" class="w-full px-6 py-4 text-left flex justify-between items-center hover:bg-gray-50">
+                        <span class="font-medium">Comment puis-je prendre contact avec un expert de Lamec.ma ?</span>
+                        <i data-lucide="chevron-down" class="h-5 w-5 transform transition-transform" id="faq3-icon"></i>
+                    </button>
+                    <div id="faq3" class="accordion-content px-6">
+                        <div class="pb-4 text-gray-600">
+                            Vous pouvez nous contacter par téléphone, email, ou via notre chat en ligne. Nos experts sont disponibles du lundi au vendredi de 9h à 18h pour répondre à toutes vos questions.
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="text-center mt-8">
+                <button onclick="openWhatsApp('Bonjour, j\'ai une question concernant vos services juridiques.')" class="border border-gray-300 text-gray-700 hover:bg-gray-50 px-6 py-3 rounded-md transition-colors flex items-center mx-auto">
+                    <i data-lucide="message-circle" class="mr-2 h-5 w-5"></i>
+                    Contacter notre équipe
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-20 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl lg:text-4xl font-bold text-gray-900 mb-4">Ce que disent nos clients</h2>
+            </div>
+
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <div class="bg-white p-6 rounded-lg shadow-sm border">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Service exceptionnel ! L'équipe de Lamec.ma a créé ma SARL en moins de 48h. Processus simple et accompagnement professionnel."
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full"></div>
+                        <div>
+                            <div class="font-semibold">Amina B.</div>
+                            <div class="text-sm text-gray-600">Fondatrice, Tech Startup</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Très satisfait du service. L'équipe est réactive et professionnelle. Je recommande vivement Lamec.ma pour la création d'entreprise."
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full"></div>
+                        <div>
+                            <div class="font-semibold">Youssef M.</div>
+                            <div class="text-sm text-gray-600">Directeur, Import/Export</div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-sm border">
+                    <div class="flex items-center space-x-1 mb-4">
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                        <i data-lucide="star" class="h-5 w-5 text-yellow-400 fill-current"></i>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        "Plateforme intuitive et équipe compétente. Lamec.ma m'a fait gagner un temps précieux dans la création de mon entreprise."
+                    </p>
+                    <div class="flex items-center space-x-3">
+                        <div class="w-10 h-10 bg-gray-200 rounded-full"></div>
+                        <div>
+                            <div class="font-semibold">Fatima Z.</div>
+                            <div class="text-sm text-gray-600">Consultante</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-gradient-to-br from-blue-600 to-indigo-700">
+        <div class="container mx-auto px-4 text-center">
+            <div class="max-w-3xl mx-auto space-y-8">
+                <h2 class="text-3xl lg:text-4xl font-bold text-white">Besoin d'être accompagné ?</h2>
+                <p class="text-xl text-blue-100">
+                    Nos experts se tiennent prêts pour vous aider dans toutes vos démarches. Contactez-nous dès maintenant pour un accompagnement personnalisé.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <button onclick="openWhatsApp('Bonjour, je souhaite prendre rendez-vous pour créer ma société.')" class="bg-white text-blue-600 hover:bg-gray-100 text-lg px-8 py-4 rounded-md transition-colors flex items-center justify-center">
+                        <i data-lucide="message-circle" class="mr-2 h-5 w-5"></i>
+                        Contacter via WhatsApp
+                    </button>
+                    <button onclick="openEmail()" class="border border-white text-white hover:bg-white hover:text-blue-600 text-lg px-8 py-4 rounded-md transition-colors">
+                        Nous contacter par email
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-gray-900 text-white py-16">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+                <div class="space-y-4">
+                    <div class="flex items-center space-x-2">
+                        <div class="w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center">
+                            <span class="text-white font-bold text-sm">L</span>
+                        </div>
+                        <span class="text-xl font-bold">Lamec.ma</span>
+                    </div>
+                    <p class="text-gray-400">
+                        Votre partenaire de confiance pour la création et la gestion d'entreprise au Maroc.
+                    </p>
+                    <div class="space-y-2">
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="phone" class="h-4 w-4"></i>
+                            <span>+212 602653893</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="mail" class="h-4 w-4"></i>
+                            <span>k.lamhaouar@lameconseil.com</span>
+                        </div>
+                        <div class="flex items-center space-x-2">
+                            <i data-lucide="message-circle" class="h-4 w-4"></i>
+                            <a href="https://wa.me/212602653893" target="_blank" rel="noopener noreferrer" class="hover:text-blue-400 transition-colors">
+                                WhatsApp: +212 602653893
+                            </a>
+                        </div>
+                        <div class="flex items-start space-x-2">
+                            <i data-lucide="map-pin" class="h-4 w-4 mt-1"></i>
+                            <div class="text-sm">
+                                <div>Lot Diamant Vert, Ichrak Center</div>
+                                <div>Imm n°B11, 3ème étage, bureau 35</div>
+                                <div>Hay Hassani, Casablanca</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Liens utiles</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Accueil</a></li>
+                        <li><a href="#services" class="hover:text-white transition-colors">Services</a></li>
+                        <li><a href="#about" class="hover:text-white transition-colors">À propos</a></li>
+                        <li><a href="#contact" class="hover:text-white transition-colors">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Liens Rapides</h3>
+                    <ul class="space-y-2 text-gray-400">
+                        <li><a href="#" class="hover:text-white transition-colors">Création SARL</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Création SA</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Domiciliation</a></li>
+                        <li><a href="#" class="hover:text-white transition-colors">Comptabilité</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h3 class="font-semibold mb-4">Newsletter</h3>
+                    <p class="text-gray-400 mb-4">Restez informé de nos dernières actualités et conseils.</p>
+                    <div class="space-y-2">
+                        <input type="email" placeholder="Votre email" class="w-full px-3 py-2 bg-gray-800 border border-gray-700 text-white rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500">
+                        <button class="w-full bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md transition-colors">S'abonner</button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; <span id="current-year"></span> Lamec.ma. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Initialize Lucide icons
+        lucide.createIcons();
+
+        // Set current year
+        document.getElementById('current-year').textContent = new Date().getFullYear();
+
+        // WhatsApp function
+        function openWhatsApp(message) {
+            const url = `https://wa.me/212602653893?text=${encodeURIComponent(message)}`;
+            window.open(url, '_blank');
+        }
+
+        // Email function
+        function openEmail() {
+            const subject = 'Demande de création de société';
+            const body = 'Bonjour, je souhaite créer ma société au Maroc. Pouvez-vous me contacter ?';
+            const url = `mailto:k.lamhaouar@lameconseil.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            window.open(url, '_blank');
+        }
+
+        // Mobile menu toggle
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('open');
+        }
+
+        // Accordion toggle
+        function toggleAccordion(id) {
+            const content = document.getElementById(id);
+            const icon = document.getElementById(id + '-icon');
+            
+            if (content.classList.contains('open')) {
+                content.classList.remove('open');
+                icon.style.transform = 'rotate(0deg)';
+            } else {
+                // Close all other accordions
+                document.querySelectorAll('.accordion-content').forEach(item => {
+                    item.classList.remove('open');
+                });
+                document.querySelectorAll('[id$="-icon"]').forEach(item => {
+                    item.style.transform = 'rotate(0deg)';
+                });
+                
+                // Open current accordion
+                content.classList.add('open');
+                icon.style.transform = 'rotate(180deg)';
+            }
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
